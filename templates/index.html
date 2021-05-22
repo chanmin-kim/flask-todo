@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!-- 헤드부분 -->
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+<!-- 바디부분 -->
+{% block body %}
+<div class="content">
+    <h1>도대체 무엇을 해야하나</h1>
+
+    {% if tasks|length < 1 %}
+    <h4>할 일이 없습니다. 오늘은 제발 일 좀 하세요.</h4>
+    {% else %}
+
+    <table>
+        <tr>
+            <th>할일</th>
+            <th>저장한 시간</th>
+            <th>수정/삭제</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/update/{{task.id}}">Update</a>
+                    <br>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" Value="Add Task">
+    </form>
+
+</div>
+{% endblock %}
