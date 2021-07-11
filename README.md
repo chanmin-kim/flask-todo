@@ -1,5 +1,19 @@
-# flask-todo
-flask todo application 
+# Flask 할일 메모
 
-전체 소스코드에 대한 설명은 여기서 확인하실 수 있습니다
-https://freedman.tistory.com/category/Projects/Flask%20%ED%95%A0%EC%9D%BC%EB%A6%AC%EC%8A%A4%ED%8A%B8
+## 기술스택
+
+- Python(Flask)
+- SQLAlchemy
+- jinja2
+
+## 주요기능
+
+### 1. CRUD
+- 게시글 작성/수정/삭제
+
+### 2. 데이터바인딩
+- 서버사이드 렌더링
+- 렌더링한 정보를 템플릿에 표시
+
+### 코드리뷰
+#### https://bit.ly/36xLlEM
